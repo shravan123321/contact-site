@@ -6,7 +6,7 @@
   <title>Shravan Kumar | Contact</title>
   <meta name="description" content="Contact page for Shravan Kumar" />
   <meta property="og:title" content="Shravan Kumar | Contact" />
-  <meta property="og:description" content="Email & phone to reach Shravan Kumar" />
+  <meta property="og:description" content="Email, phone & social links to reach Shravan Kumar" />
   <meta name="theme-color" content="#0ea5e9" />
   <style>
     :root{
@@ -60,6 +60,7 @@
     </div>
 
     <section class="grid" aria-label="Contact Details">
+      <!-- Email -->
       <div class="item">
         <div class="label">Email</div>
         <div class="value" id="email">shravankumar4223@gmail.com</div>
@@ -69,6 +70,7 @@
         </div>
       </div>
 
+      <!-- Phone -->
       <div class="item">
         <div class="label">Phone</div>
         <div class="value" id="phone">+91 7033425610</div>
@@ -78,13 +80,31 @@
           <button class="btn link" data-copy="#phone" aria-label="Copy phone">Copy</button>
         </div>
       </div>
+
+      <!-- Instagram -->
+      <div class="item">
+        <div class="label">Instagram</div>
+        <div class="value" id="instagram">@shravan1346kumar</div>
+        <div class="row">
+          <a class="btn" href="https://instagram.com/shravan1346kumar" target="_blank" rel="noopener" aria-label="Instagram profile">View Profile</a>
+          <button class="btn link" data-copy="#instagram" aria-label="Copy Instagram ID">Copy</button>
+        </div>
+      </div>
+
+      <!-- GitHub -->
+      <div class="item">
+        <div class="label">GitHub</div>
+        <div class="value" id="github">github.com/shravan123321</div>
+        <div class="row">
+          <a class="btn" href="https://github.com/shravan123321" target="_blank" rel="noopener" aria-label="GitHub profile">View Profile</a>
+          <button class="btn link" data-copy="#github" aria-label="Copy GitHub ID">Copy</button>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <script>
-    // dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
     // copy helpers
     document.querySelectorAll('[data-copy]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -99,3 +119,4 @@
   </script>
 </body>
 </html>
+
