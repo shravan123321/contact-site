@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shravan Kumar | Contact</title>
+  <meta name="description" content="Contact page for Shravan Kumar" />
+  <meta property="og:title" content="Shravan Kumar | Contact" />
+  <meta property="og:description" content="Email & phone to reach Shravan Kumar" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root{
+      --bg:#0b1020; --card:#11182b; --text:#e6eefc; --muted:#a8b3cf; --accent:#3b82f6; --ring:#60a5fa;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;
+      background:radial-gradient(1200px 800px at 20% -10%, #152040 0%, transparent 60%),
+                 radial-gradient(1000px 700px at 120% 10%, #1b2b55 0%, transparent 50%),
+                 var(--bg);
+      color:var(--text); display:grid; place-items:center; padding:24px;
+    }
+    .card{
+      width:100%; max-width:720px; background:color-mix(in oklab, var(--card) 92%, white 8%);
+      border:1px solid rgba(255,255,255,0.06); border-radius:24px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter:saturate(140%) blur(6px);
+    }
+    .header{display:flex; align-items:center; gap:16px; margin-bottom:16px}
+    .avatar{
+      width:64px; height:64px; border-radius:16px; display:grid; place-items:center; font-weight:700; letter-spacing:.5px;
+      background:linear-gradient(135deg,#60a5fa,#22d3ee); color:#0b1020; border:1px solid rgba(255,255,255,.4);
+      text-shadow:0 1px 0 rgba(255,255,255,.4);
+    }
+    h1{font-size:28px; line-height:1.2; margin:0}
+    .subtitle{color:var(--muted); margin-top:4px}
+    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:18px}
+    @media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    .item{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:16px; border-radius:16px}
+    .label{color:var(--muted); font-size:13px; letter-spacing:.3px; text-transform:uppercase}
+    .value{font-size:18px; margin-top:6px; word-break:break-all}
+    .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      appearance:none; border:none; cursor:pointer; border-radius:12px; padding:10px 14px; font-weight:600;
+      background:rgba(59,130,246,.15); color:#cfe3ff; border:1px solid rgba(59,130,246,.35);
+    }
+    .btn:focus{outline:none; box-shadow:0 0 0 4px rgba(96,165,250,.35)}
+    .btn.link{background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12)}
+    footer{margin-top:22px; color:var(--muted); font-size:14px}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="header">
+      <div class="avatar" aria-hidden="true">SK</div>
+      <div>
+        <h1>Shravan Kumar</h1>
+        <div class="subtitle">Get in touch</div>
+      </div>
+    </div>
+
+    <section class="grid" aria-label="Contact Details">
+      <div class="item">
+        <div class="label">Email</div>
+        <div class="value" id="email">shravankumar4223@gmail.com</div>
+        <div class="row">
+          <a class="btn" href="mailto:shravankumar4223@gmail.com" aria-label="Send email">Send Email</a>
+          <button class="btn link" data-copy="#email" aria-label="Copy email">Copy</button>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="label">Phone</div>
+        <div class="value" id="phone">+91 7033425610</div>
+        <div class="row">
+          <a class="btn" href="tel:+917033425610" aria-label="Call phone">Call</a>
+          <a class="btn link" href="https://wa.me/917033425610" target="_blank" rel="noopener" aria-label="WhatsApp chat">WhatsApp</a>
+          <button class="btn link" data-copy="#phone" aria-label="Copy phone">Copy</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // copy helpers
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const el = document.querySelector(btn.getAttribute('data-copy'));
+        const text = el?.textContent?.trim() || '';
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = 'Copied!';
+          setTimeout(() => (btn.textContent = 'Copy'), 1200);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
